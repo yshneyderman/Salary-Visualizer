@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salary Visualizer</title>
+    <link rel="icon" href="Icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/5633df50d0.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div>
+        <p style="font-family: Calibri; font-size: 18px;">Salary Visualizer</p>
+        <div class="empty" style="float: left; width: 33%;"></div>
+        <div style="float: left;" class="center">
+            <img src="https://cdn.dribbble.com/users/743668/screenshots/6196706/money_pile_dribble_1.gif" width="300px">
+            <div class="statement">You have accumulated:</div>
+            <div id="money"></div>
+            <button id="stop" class="stop" onclick="toggleStop()"><i class="fas fa-pause-circle"></i>  Pause</button>
+            <button class="restart" onclick="restart()"><i class="fas fa-redo"></i>  Restart</button>
+            
+        </div>
+        <div class="empty" style="float: left; width: 33%;"></div>
+    </div>
+</body>
+</html>
