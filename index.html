@@ -12,8 +12,11 @@
         <p style="font-family: Calibri; font-size: 18px;">Salary Visualizer</p>
         <div class="empty" style="float: left; width: 33%;"></div>
         <div style="float: left;" class="center">
-            <img src="https://cdn.dribbble.com/users/743668/screenshots/6196706/money_pile_dribble_1.gif" width="300px">
-            <div class="statement">You have accumulated:</div>
+            <div id="dollar">
+                <div style="background-color: green; width: 200px; height: 100px; margin-left: 100px; position: absolute;"></div>
+                <div style="background-color: rgb(255, 255, 255); width: 0; height: 100px; margin-left: 100px; position: absolute;"></div>
+            </div>
+            <div class="statement" style="margin-top: 130px;">You have accumulated:</div>
             <div id="money"></div>
             <button id="stop" class="stop" onclick="toggleStop()"><i class="fas fa-pause-circle"></i>  Pause</button>
             <button class="restart" onclick="restart()"><i class="fas fa-redo"></i>  Restart</button>

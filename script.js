@@ -1,8 +1,9 @@
 let startABS = new Date().getTime();
 let seconds = 0;
 let money = 0.00;
-let salary = 30.00;
+let salary = 32.00;
 let pause = false;
+let fps = 24;
 window.onload = startTime;
 
 function startTime() {
@@ -14,11 +15,12 @@ function startTime() {
         var today = new Date();
         seconds = parseInt((today.getTime() - startABS)/1000, 10);
         document.getElementById('money').innerHTML = "$" + calculateMoney(seconds);
+        document.getElementById('dollar').innerHTML = '<div style="background-color: green; width: ' + (200*(money%1))%200 + 'px; height: 100px; margin-left: 100px; position: absolute;"></div>'
         //save every 5 seconds
         if(seconds%5 == 0){
             localStorage.setItem("money", money);
         }
-        var t = setTimeout(startTime, 1000);
+        var t = setTimeout(startTime, 1000/fps);
     }
 }
 
@@ -39,7 +41,7 @@ function checkTime(i) {
 }
 
 function calculateMoney(seconds){
-    money += parseFloat((salary/3600));
+    money += parseFloat((salary/3600)/fps);
     return money.toFixed(2);
 }
 
