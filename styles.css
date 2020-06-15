@@ -11,10 +11,11 @@
     border-color: #222222;
     border-style: solid;
     border-width: 1px;
+    position: relative;
   }
 
   .empty {
-      padding: 1px;
+    padding: 1px;
   }
 
   .statement {
@@ -26,7 +27,7 @@
     border-radius: 12px;
     background-color: #8a0c0c;
     color: white;
-    padding: 5px 10px;
+    padding: 2px 2px;
     border: none;
     cursor: pointer;
     width: 100px;
@@ -43,7 +44,7 @@
     border-radius: 12px;
     background-color: #0c438a;
     color: white;
-    padding: 5px 10px;
+    padding: 2px 2px;
     border: none;
     cursor: pointer;
     width: 100px;
