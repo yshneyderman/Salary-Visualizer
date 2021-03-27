@@ -2,34 +2,79 @@
 <html>
 <head>
     <title>Salary Visualizer</title>
-    <link rel="icon" href="Icon.png">
+    <link rel="icon" href="https://www.rawshorts.com/freeicons/wp-content/uploads/2017/01/green_prodpictdollar_1484336218-1.png">
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/5633df50d0.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+    
 </head>
 <body>
-    <div>
-        <p style="font-family: Calibri; font-size: 18px;">Salary Visualizer</p>
-        <div id="left" class="empty" style="float: left; width: 33%;"></div>
-        <div style="float: left;" class="center">
-            <div>
-                <form id="salary">
-                    <label for="wage" style="font-size: 12px;">Wage/hr:</label>
-                    <input type="text" id="wage" name="wage" value="30">
-                </form>
+    <div class="navbar">
+        <div class="profile">
+            <div class="profile1">
+                <p><i class="fa fa-plus-circle" aria-hidden="true" id="icon-default" style="font-size: 2em;"></i></p>
+                
             </div>
-            <div id="dollar" style="margin-top:20px;">
-                <div style="background-color: rgb(255, 255, 255); width: 200; height: 25px; margin-left: 100px; position: absolute;"></div>
+            <div class="profile2">
+                <p>Add profile info</p>
             </div>
-            <div class="statement" style="margin-top: 70px;">You have accumulated:</div>
-            <div id="money"></div>
-            <button id="stop" class="stop" onclick="toggleStop()"><i class="fas fa-pause-circle"></i>&nbsp;&nbsp;Pause</button>
-            <button class="restart" onclick="restart()"><i class="fas fa-redo"></i>&nbsp;&nbsp;Restart</button>
-            <button id="view" class="stop" onclick="toggleView()"><i class="fas fa-angle-double-down"></i>&nbsp;&nbsp;View More</button>
         </div>
-        <div id="right" class="empty" style="float: left; width: 33%;">
-            
+
+        <div class="navbar-item" id="selected">
+            <p><i class="fa fa-university" aria-hidden="true"></i> Salary Dashboard</p>
+        </div>
+        <div class="navbar-item">
+            <p><i class="fa fa-info-circle" aria-hidden="true"></i> About</p>
+        </div>
+        <div class="navbar-item" style="position: fixed; left: 7%; bottom: 10px; transform: translate(-7%, -7%); margin: 0 auto;">
+            <p><i class="fa fa-cog" aria-hidden="true"></i> Settings</p>
         </div>
     </div>
+    <div class="main">
+        <div>
+            <p style="color: var(--white); font-size: 0.8em; margin-left: 20px;">Salary Dashboard</p>
+            <p class="subtext" style="margin-left: 20px; margin-top: -10px; margin-bottom: 20px;">View salary tracker and goals</p>
+            <p id="datetime" class="subtext" style="margin-right: 22px; margin-top: -25px; float: right;">Current Time/Date:</p>
+        </div>
+        <div id="salary" class="panel">
+            <div class="panel-inside" id="salary-inside">
+            </div>
+        </div>
+        <div id="goals">
+            <div id="goal1" class="panel">
+                <div class="panel-inside">
+                    <p class="subtext">Goal1</p>
+                </div>
+            </div>
+            <div id="goal2" class="panel">
+                <div class="panel-inside">
+                    <p class="subtext">Goal2</p>
+                </div>
+            </div>
+            <div id="goal3" class="panel">
+                <div class="panel-inside">
+                    <p class="subtext">Goal3</p>
+                </div>
+            </div>
+        </div>
+        <div id="account" class="panel">
+            <div class="panel-inside" id="account-inside">
+                <p class="subtext">Account</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="salaryModal">
+        <div class="modalContent">
+            <p>Create Salary</p>
+            <form id="salaryForm">
+                <input class="input" type="text" id="position" name="position" value="Position title"><br>
+                <input class="input" type="text" id="hourly" name="hourly" value="Hourly Wage"><br>
+                <input class="input" type="text" id="tax" name="tax" value="Applied Tax"><br>
+                <br>
+                <input type="submit" value="Submit" class="button" onclick="createSalary()" style="width: 80px; cursor: pointer">
+            </form> 
+        </div>
+    </div>    
+    
 </body>
+<script src="script.js"></script>
 </html>
